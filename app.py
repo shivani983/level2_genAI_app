@@ -10,9 +10,7 @@ from langchain_community.document_loaders import WebBaseLoader
 
 st.set_page_config(page_title="Sentiment Analyzer", layout="centered")
 def main():
-    groq_api_key = st.text_input("🔑 Enter your Groq API Key", type="password")
-    load_dotenv(find_dotenv())
-    groq_api_key = os.getenv("GROQ_API_KEY")
+    api_key = st.text_input("🔑 Enter your Groq API Key", type="password")
     
 
     
@@ -21,7 +19,7 @@ def main():
 
     if st.button("Analyze Sentiment"):
         
-        model = ChatGroq(model="gemma2-9b-it", api_key=groq_api_key)
+        model = ChatGroq(model="gemma2-9b-it", api_key=api_key)
 
 
         st.markdown("### Sentiment Analysis Results")
