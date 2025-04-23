@@ -10,7 +10,7 @@ from langchain_community.document_loaders import WebBaseLoader
 
 st.set_page_config(page_title="Sentiment Analyzer", layout="centered")
 def main():
-    # Load Groq API key from .env
+    groq_api_key = st.text_input("🔑 Enter your Groq API Key", type="password")
     load_dotenv(find_dotenv())
     groq_api_key = os.getenv("GROQ_API_KEY")
     
